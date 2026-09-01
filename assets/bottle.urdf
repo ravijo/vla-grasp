@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!-- Plastic water-bottle proxy. One rigid link:
+       - collision  = body cylinder ONLY (keeps the validated top-down grasp)
+       - visuals    = translucent body + narrow neck + solid cap (bottle look)
+     Body: r=3.2 cm, h=12 cm (graspable). Neck/cap are visual-only detail
+     stacked on top of the body, so physics is unchanged. -->
+<robot name="bottle">
+  <link name="base">
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.0002" ixy="0" ixz="0" iyy="0.0002" iyz="0" izz="0.00005"/>
+    </inertial>
+
+    <!-- Body (translucent blue "water") -->
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.032" length="0.12"/>
+      </geometry>
+      <material name="water_blue">
+        <color rgba="0.30 0.55 0.90 0.55"/>
+      </material>
+    </visual>
+
+    <!-- Shoulder taper (short mid cylinder for a smoother silhouette) -->
+    <visual>
+      <origin xyz="0 0 0.068"/>
+      <geometry>
+        <cylinder radius="0.022" length="0.02"/>
+      </geometry>
+      <material name="water_blue2">
+        <color rgba="0.30 0.55 0.90 0.55"/>
+      </material>
+    </visual>
+
+    <!-- Neck (narrow, clearer) -->
+    <visual>
+      <origin xyz="0 0 0.093"/>
+      <geometry>
+        <cylinder radius="0.013" length="0.032"/>
+      </geometry>
+      <material name="neck_blue">
+        <color rgba="0.35 0.60 0.92 0.65"/>
+      </material>
+    </visual>
+
+    <!-- Cap (solid, colored) -->
+    <visual>
+      <origin xyz="0 0 0.117"/>
+      <geometry>
+        <cylinder radius="0.016" length="0.02"/>
+      </geometry>
+      <material name="cap_blue">
+        <color rgba="0.10 0.25 0.65 1.0"/>
+      </material>
+    </visual>
+
+    <collision>
+      <geometry>
+        <cylinder radius="0.032" length="0.12"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>
