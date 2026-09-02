@@ -6,7 +6,7 @@ Physical AI and vision-language-action (VLA) models are becoming a core part of 
 *This is a proof-of-concept, intended as a learning project for understanding VLA fine-tuning in practice, not a production-ready grasping system.*
 
 
-## Demonstrates
+## Demonstration
 
 <p align="center">
     <img src="videos/expert-policy.gif" alt="gif showing expert policy" />
@@ -26,3 +26,5 @@ Physical AI and vision-language-action (VLA) models are becoming a core part of 
 <p align="center">
     <strong>Work in Progress</strong>
 </p>
+
+Please wait!!!
