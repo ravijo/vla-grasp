@@ -1,3 +1,4 @@
+import argparse
 import math
 import os
 import time
@@ -294,4 +295,8 @@ def smoke_test(n_episodes=8, gui=False, max_steps=200):
 
 
 if __name__ == "__main__":
-    smoke_test(n_episodes=8, gui=False)
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--n", type=int, default=8, help="number of episodes")
+    ap.add_argument("--gui", action="store_true", help="launch GUI")
+    args = ap.parse_args()
+    smoke_test(n_episodes=args.n, gui=args.gui)
